@@ -1,5 +1,6 @@
 import React from "react";
-import { formatDate } from "../utils";
+import { Link } from "@reach/router";
+import styles from "../styles/SingleLine.module.css";
 
 const SingleLine = props => {
   const { lines, line } = props;
@@ -9,10 +10,12 @@ const SingleLine = props => {
   });
 
   return (
-    <div>
+    <div className={styles.lineInfoBody}>
       <h2>{lineInfo[0].name}</h2>
-      <p>Last Updated: {formatDate(lineInfo[0].modified)}</p>
-      <p>{lineInfo[0].lineStatuses[0].reason}</p>
+      <p className={styles.lineStatusReason}>
+        {lineInfo[0].lineStatuses[0].reason}
+      </p>
+      <Link to="/travel">Go Back</Link>
     </div>
   );
 };

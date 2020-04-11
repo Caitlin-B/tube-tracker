@@ -1,0 +1,14 @@
+.lineInfoBody {
+  margin-bottom: 25%;
+  height: 100px;
+}
+
+.lineStatusReason {
+  margin: 3%;
+}
+
+@media only screen and (max-width: 1035px) {
+  h2 {
+    margin-top: 2%;
+  }
+}

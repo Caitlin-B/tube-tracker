@@ -1,0 +1,15 @@
+.tableContainer{
+  margin: 3%;
+  border: solid;
+  border-radius:5px;
+}
+
+.allLinesTable{
+  background-color:white;
+  margin:0;
+}
+
+
+.tableHead{
+  background-color:lightgrey;
+}

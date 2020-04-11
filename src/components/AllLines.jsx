@@ -1,23 +1,42 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { formatDate } from "../utils";
+import Table from "react-bootstrap/Table";
+import styles from "../styles/AllLines.module.css";
 
 const AllLines = props => {
   const { lines } = props;
 
   return (
     <div>
-      <h2>Info for all lines</h2>
-      <p>Last Updated: {formatDate(lines[0].modified)}</p>
-      {lines.map(line => {
-        return (
-          <div key={line.name}>
-            <p>{line.name}</p>
-            <p>{line.lineStatuses[0].statusSeverityDescription}</p>
-            <Link to={`/${line.id}`}>View More</Link>
-          </div>
-        );
-      })}
+      <div className={styles.tableContainer}>
+        <Table
+          className={styles.allLinesTable}
+          striped
+          bordered
+          hover
+          size="sm">
+          <thead className={styles.tableHead}>
+            <tr>
+              <th>Line</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {lines.map(line => {
+              return (
+                <tr key={line.name}>
+                  <td>{line.name}</td>
+                  <td>{line.lineStatuses[0].statusSeverityDescription}</td>
+                  <td>
+                    <Link to={`/travel/${line.id}`}>View More</Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };
