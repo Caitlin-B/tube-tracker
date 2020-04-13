@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import styles from "../styles/SingleLine.module.css";
 
 const SingleLine = props => {
-  const { lines, line } = props;
+  const { lines, line } = props; 
 
   const lineInfo = lines.filter(eachLine => {
     return eachLine.id === line;
@@ -11,7 +11,7 @@ const SingleLine = props => {
 
   return (
     <div className={styles.lineInfoBody}>
-      <h2>{lineInfo[0].name}</h2>
+      <h2 className={styles[lineInfo[0].id]}>{lineInfo[0].name}</h2>
       <p className={styles.lineStatusReason}>
         {lineInfo[0].lineStatuses[0].reason}
       </p>

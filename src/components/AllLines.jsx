@@ -25,9 +25,9 @@ const AllLines = props => {
           <tbody>
             {lines.map(line => {
               return (
-                <tr key={line.name}>
-                  <td>{line.name}</td>
-                  <td>{line.lineStatuses[0].statusSeverityDescription}</td>
+                <tr key={line.name} >
+                  <td className={styles[line.id]}>{line.name}</td>
+                  <td className={styles["severity"+line.lineStatuses[0].statusSeverity]}>{line.lineStatuses[0].statusSeverityDescription}</td>
                   <td>
                     <Link to={`/travel/${line.id}`}>View More</Link>
                   </td>

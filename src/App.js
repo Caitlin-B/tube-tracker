@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, navigate } from "@reach/router";
+import { Router } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as api from "./api";
 import "./App.css";
@@ -39,7 +39,6 @@ class App extends Component {
   componentDidMount() {
     api.fetchStatus().then(lines => {
       this.setState({ lines, isLoading: false });
-      navigate("/travel");
     });
   }
 }
