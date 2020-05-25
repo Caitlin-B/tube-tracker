@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as api from "./api";
